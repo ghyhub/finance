@@ -1,0 +1,7 @@
+[0m2021.01.25 14:18:21 INFO  Started: Metals version 0.9.10 in workspace 'D:\Users\a8700\Downloads\sdk_win_v1.1\financeWinSdk\java_sdk\WeWorkFinanceSdk' for client vscode 1.52.1.[0m
+[0m2021.01.25 14:18:25 INFO  time: initialize in 4.41s[0m
+[0m2021.01.25 14:18:26 WARN  Build server is not auto-connectable.[0m
+[0m2021.01.25 14:18:26 WARN  no build tool detected in workspace 'D:\Users\a8700\Downloads\sdk_win_v1.1\financeWinSdk\java_sdk\WeWorkFinanceSdk'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+[0m2021.01.29 12:12:05 INFO  Started: Metals version 0.9.10 in workspace 'D:\work\2021_1_27\finance' for client vscode 1.52.1.[0m
+[0m2021.01.29 12:12:14 INFO  time: initialize in 8.85s[0m
+[0m2021.01.29 12:12:21 WARN  Build server is not auto-connectable.[0m
