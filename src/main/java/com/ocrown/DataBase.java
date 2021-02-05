@@ -55,6 +55,9 @@ public class DataBase {
     }
 
     public String generateInsertStatement(String table,Map<String,String>map,String primarykey){
+        return generateInsertStatement(table, map);
+    }
+    public String generateInsertStatement(String table,Map<String,String>map){
         String ret="REPLACE INTO "+table+" (";
         Set<String>keys=map.keySet();
         String tmp0="`";
