@@ -9,12 +9,7 @@ public class TodoMsg extends ChatMsg {
 
     String title;
     String content;
-    TodoMsg(String msgid, String action, String from, Vector<String> tolist, String roomid, long msgtime,
-            String msgtype,String title,String content) {
-        super(msgid, action, from, tolist, roomid, msgtime, msgtype);
-        this.title=title;
-        this.content=content;
-    }
+
     TodoMsg(String title,String content){
         super();
         this.title=title;

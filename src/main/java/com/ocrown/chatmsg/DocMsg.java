@@ -11,13 +11,6 @@ public class DocMsg extends ChatMsg {
     String linkurl;
     String doccreator;
 
-    DocMsg(String msgid, String action, String from, Vector<String> tolist, String roomid, long msgtime,
-            String msgtype,String title,String linkurl,String doccreator) {
-        super(msgid, action, from, tolist, roomid, msgtime, msgtype);
-        this.title=title;
-        this.linkurl=linkurl;
-        this.doccreator=doccreator;
-    }
     DocMsg(String title,String linkurl,String doccreator){
         this.title=title;
         this.linkurl=linkurl;

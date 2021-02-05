@@ -10,12 +10,7 @@ public class AgreeMsg extends ChatMsg {
 
     String userid;
     long agreetime;
-    AgreeMsg(String msgid, String action, String from, Vector<String> tolist, String roomid, int msgtime,
-            String msgtype,String userid,long agreetime) {
-        super(msgid, action, from, tolist, roomid, msgtime, msgtype);
-        this.userid=userid;
-        this.agreetime=agreetime;
-    }
+
     AgreeMsg(String userid,long agreetime){
         super();
         this.userid=userid;

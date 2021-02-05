@@ -17,19 +17,6 @@ public class CalendarMsg extends ChatMsg {
     String place;
     String remarks;
 
-    CalendarMsg(String msgid, String action, String from, Vector<String> tolist, String roomid, long msgtime,
-            String msgtype, String title, String creatorname, Vector<String> attendeename, long starttime, long endtime,
-            String place, String remarks) {
-        super(msgid, action, from, tolist, roomid, msgtime, msgtype);
-        this.title = title;
-        this.creatorname = creatorname;
-        this.attendeename = attendeename;
-        this.starttime = starttime;
-        this.endtime = endtime;
-        this.place = place;
-        this.remarks = remarks;
-    }
-
     CalendarMsg(String title, String creatorname, Vector<String> attendeename, long starttime, long endtime,
             String place, String remarks) {
         super();

@@ -11,12 +11,7 @@ public class ChatrecordMsg extends ChatMsg {
 
     String title;
     Vector<ChatrecordItem>items;
-    ChatrecordMsg(String msgid, String action, String from, Vector<String> tolist, String roomid, int msgtime,
-            String msgtype,String title,Vector<ChatrecordItem>items){
-        super(msgid, action, from, tolist, roomid, msgtime, msgtype);
-        this.title=title;
-        this.items=items;
-    }
+
     ChatrecordMsg(String title,Vector<ChatrecordItem>items){
         super();
         this.title=title;

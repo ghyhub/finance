@@ -32,6 +32,6 @@ public class SwitchConverse extends WeworkConverse{
     
     public static WeworkConverse conFactory(String data,FileStorer fs){
         Map<String,String>map=StringOperator.objectFromString(data);
-        return new SwitchConverse(Long.parseLong(map.get("time")),StringOperator.value2String(map.get("user")))
+        return new SwitchConverse(Long.parseLong(map.get("time")),StringOperator.value2String(map.get("user")));
     }
 }

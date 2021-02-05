@@ -11,13 +11,7 @@ public class EmotionMsg extends DownloadableMsg {
     long type;
     long width;
     long height;
-    EmotionMsg(String msgid, String action, String from, Vector<String> tolist, String roomid, int msgtime,
-            String msgtype, String sdkfileid, String md5sum, long filesize, long type,long width,long height,FileStorer fs) {
-        super(msgid, action, from, tolist, roomid, msgtime, msgtype, sdkfileid, md5sum, filesize,fs);
-        this.type=type;
-        this.width=width;
-        this.height=height;
-    }
+
     EmotionMsg(String sdkfileid,String md5sum,long filesize,FileStorer fs,long type,long width,long height){
         super(sdkfileid, md5sum, filesize,fs);
         this.type=type;

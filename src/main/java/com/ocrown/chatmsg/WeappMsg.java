@@ -11,14 +11,7 @@ public class WeappMsg extends ChatMsg {
     String description;
     String username;
     String displayname;
-    WeappMsg(String msgid, String action, String from, Vector<String> tolist, String roomid, int msgtime,
-            String msgtype,String title,String description,String username,String displayname) {
-        super(msgid, action, from, tolist, roomid, msgtime, msgtype);
-        this.title=title;
-        this.description=description;
-        this.username=username;
-        this.displayname=displayname;
-    }
+
     WeappMsg(String title,String description,String username,String displayname){
         super();
         this.title=title;

@@ -15,16 +15,6 @@ public class LocationMsg extends ChatMsg {
     // 缩放比例
     long zoom;
 
-    LocationMsg(String msgid, String action, String from, Vector<String> tolist, String roomid, int msgtime,
-            String msgtype, double longitude, double latitude, String address, String title, long zoom) {
-        super(msgid, action, from, tolist, roomid, msgtime, msgtype);
-        this.longitude = longitude;
-        this.latitude = latitude;
-        this.address = address;
-        this.title = title;
-        this.zoom = zoom;
-    }
-
     LocationMsg(double longitude, double latitude, String address, String title, long zoom) {
         super();
         this.longitude = longitude;

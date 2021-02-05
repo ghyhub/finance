@@ -21,20 +21,6 @@ public class MeetingMsg extends ChatMsg {
     // 只有meetingtype为102的时候此字段才有内容。
     long status;
     
-    MeetingMsg(String msgid, String action, String from, Vector<String> tolist, String roomid, long msgtime,
-            String msgtype,String topic,long starttime,long endtime,String address,String remarks,long meetingtype,
-            long meetingid,long status) {
-        super(msgid, action, from, tolist, roomid, msgtime, msgtype);
-        this.topic=topic;
-        this.starttime=starttime;
-        this.endtime=endtime;
-        this.address=address;
-        this.remarks=remarks;
-        this.meetingtype=meetingtype;
-        this.meetingid=meetingid;
-        this.status=status;
-    }
-
     MeetingMsg(String topic,long starttime,long endtime,String adress,String remarks,long meetingtype,long meetingid,long status){
         super();
         this.topic=topic;

@@ -13,15 +13,6 @@ public abstract class DownloadableMsg extends ChatMsg {
     long filesize;
     FileStorer fs;
 
-    DownloadableMsg(String msgid, String action, String from, Vector<String> tolist, String roomid, int msgtime,String msgtype,
-            String sdkfileid, String md5sum, long filesize,FileStorer fs) {
-        super(msgid, action, from, tolist, roomid, msgtime, msgtype);
-        this.fs=fs;
-        this.sdkfileid=sdkfileid;
-        this.md5sum=md5sum;
-        this.filesize=filesize;
-    }
-
     DownloadableMsg(String sdkfileid,String md5sum,long filesize,FileStorer fs){
         super();
         this.sdkfileid=sdkfileid;

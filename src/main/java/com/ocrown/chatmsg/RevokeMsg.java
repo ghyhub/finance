@@ -9,11 +9,6 @@ public class RevokeMsg extends ChatMsg {
 
     String premsgid;
 
-    RevokeMsg(String msgid, String action, String from, Vector<String> tolist, String roomid, int msgtime,String msgtype,
-            String premsgid) {
-        super(msgid, action, from, tolist, roomid, msgtime, msgtype);
-        this.premsgid = premsgid;
-    }
     RevokeMsg(String premsgid){
         super();
         this.premsgid=premsgid;

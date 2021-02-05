@@ -15,16 +15,6 @@ public class CollectMsg extends ChatMsg {
     String title;
     Vector<CollectItem> details;
 
-
-    CollectMsg(String msgid, String action, String from, Vector<String> tolist, String roomid, long msgtime,
-            String msgtype,String roomname,String creator,String createtime,String title, Vector<CollectItem>details) {
-        super(msgid, action, from, tolist, roomid, msgtime, msgtype);
-        this.roomname=roomname;
-        this.creator=creator;
-        this.createtime=createtime;
-        this.title=title;
-        this.details=details;
-    }
     CollectMsg(String roomname,String creator,String createtime,String title,Vector<CollectItem>detatails){
         this.roomname=roomname;
         this.creator=creator;

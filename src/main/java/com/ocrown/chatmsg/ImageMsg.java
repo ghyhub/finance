@@ -8,11 +8,6 @@ import com.ocrown.StringOperator;
 
 public class ImageMsg extends DownloadableMsg {
 
-    ImageMsg(String msgid, String action, String from, Vector<String> tolist, String roomid, int msgtime,String msgtype,
-            String sdkfileid, String md5sum, long filesize,FileStorer fs) {
-        super(msgid, action, from, tolist, roomid, msgtime, msgtype, sdkfileid, md5sum, filesize,fs);
-        // TODO Auto-generated constructor stub
-    }
     ImageMsg(String sdkfileid,String md5sum,long filesize,FileStorer fs){
         super(sdkfileid, md5sum, filesize,fs);
     }

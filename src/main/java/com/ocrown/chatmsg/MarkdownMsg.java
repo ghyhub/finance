@@ -8,11 +8,6 @@ public class MarkdownMsg extends ChatMsg {
 
     String content;
 
-    MarkdownMsg(String msgid, String action, String from, Vector<String> tolist, String roomid, long msgtime,
-            String msgtype,String content) {
-        super(msgid, action, from, tolist, roomid, msgtime, msgtype);
-        this.content=content;
-    }
     MarkdownMsg(String content){
         super();
         this.content=content;

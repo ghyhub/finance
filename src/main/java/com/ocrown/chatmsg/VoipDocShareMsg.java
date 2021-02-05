@@ -11,12 +11,6 @@ public class VoipDocShareMsg extends DownloadableMsg {
     String voipid;
     String filename;
 
-    VoipDocShareMsg(String msgid, String action, String from, Vector<String> tolist, String roomid, int msgtime,
-            String msgtype, String sdkfileid, String md5sum, long filesize,String voipid,String filename,FileStorer fs) {
-        super(msgid, action, from, tolist, roomid, msgtime, msgtype, sdkfileid, md5sum, filesize, fs);
-        this.voipid=voipid;
-        this.filename=filename;
-    }
     VoipDocShareMsg(String sdkfileid,String md5sum,long filesize, FileStorer fs){
         super(sdkfileid,md5sum,filesize,fs);
     }

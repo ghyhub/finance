@@ -10,16 +10,6 @@ public class MeetingVoiceCall extends ChatMsg {
     Vector<MeetingDemofiledata> demofiledatas;
     Vector<MeetingSharescreendata> sharesreendatas;
     
-    MeetingVoiceCall(String msgid, String action, String from, Vector<String> tolist, String roomid, long msgtime,
-            String msgtype,String voiceid,long endtime,String sdkfileid,Vector<MeetingDemofiledata>demofiledatas,
-            Vector<MeetingSharescreendata>sharescreendatas) {
-        super(msgid, action, from, tolist, roomid, msgtime, msgtype);
-        this.voiceid=voiceid;
-        this.endtime=endtime;
-        this.sdkfileid=sdkfileid;
-        this.demofiledatas=demofiledatas;
-        this.sharesreendatas=sharescreendatas;
-    }
     MeetingVoiceCall(){
 
     }

@@ -9,11 +9,6 @@ import com.ocrown.StringOperator;
 public class VoiceMsg extends DownloadableMsg {
 
     long  playlength;
-    VoiceMsg(String msgid, String action, String from, Vector<String> tolist, String roomid, int msgtime,
-            String msgtype, String sdkfileid, String md5sum, long filesize,long playlength,FileStorer fs) {
-        super(msgid, action, from, tolist, roomid, msgtime, msgtype, sdkfileid, md5sum, filesize,fs);
-        this.playlength=playlength;
-    }
 
     VoiceMsg(String sdkfileid,String md5sum,long filesize,long playlength,FileStorer fs){
         super(sdkfileid, md5sum, filesize, fs);

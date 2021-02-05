@@ -12,14 +12,6 @@ public class LinkMsg extends ChatMsg {
     String linkurl;
     String imageurl;
 
-    LinkMsg(String msgid, String action, String from, Vector<String> tolist, String roomid, int msgtime,
-            String msgtype,String title,String description,String linkurl,String imageurl) {
-        super(msgid, action, from, tolist, roomid, msgtime, msgtype);
-        this.title=title;
-        this.description=description;
-        this.linkurl=linkurl;
-        this.imageurl=imageurl;
-    }
     LinkMsg(String title,String description,String linkurl,String imageurl){
         super();
         this.title=title;

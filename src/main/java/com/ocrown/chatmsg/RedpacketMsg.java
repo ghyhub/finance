@@ -14,14 +14,6 @@ public class RedpacketMsg extends ChatMsg {
     // 红包总金额。Uint32类型，单位为分。
     long totalamount;
 
-    RedpacketMsg(String msgid, String action, String from, Vector<String> tolist, String roomid, long msgtime,
-            String msgtype,long type,String wish,long totalcnt,long totalamount) {
-        super(msgid, action, from, tolist, roomid, msgtime, msgtype);
-        this.type=type;
-        this.wish=wish;
-        this.totalcnt=totalcnt;
-        this.totalamount=totalamount;
-    }
     RedpacketMsg(long type,String wish,long totalcnt,long totalamount){
         super();
         this.type=type;

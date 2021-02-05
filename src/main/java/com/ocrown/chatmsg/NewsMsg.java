@@ -10,11 +10,7 @@ import com.ocrown.StringOperator;
 public class NewsMsg extends ChatMsg {
 
     Vector<NewsItem> items;
-    NewsMsg(String msgid, String action, String from, Vector<String> tolist, String roomid, long msgtime,
-            String msgtype, Vector<NewsItem> items) {
-        super(msgid, action, from, tolist, roomid, msgtime, msgtype);
-        this.items=items;
-    }
+
     NewsMsg(Vector<NewsItem>items){
         super();
         this.items=items;

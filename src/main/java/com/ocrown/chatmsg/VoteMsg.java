@@ -15,14 +15,6 @@ public class VoteMsg extends ChatMsg {
     long type;
     String id;
 
-    VoteMsg(String msgid, String action, String from, Vector<String> tolist, String roomid, long msgtime,
-            String msgtype,String title,Vector<String>item,long type,String id) {
-        super(msgid, action, from, tolist, roomid, msgtime, msgtype);
-        this.title=title;
-        this.item=item;
-        this.type=type;
-        this.id=id;
-    }
     VoteMsg(String title,Vector<String>item,long type,String id){
         super();
         this.title=title;

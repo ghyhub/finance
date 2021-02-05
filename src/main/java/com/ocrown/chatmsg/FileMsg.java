@@ -10,12 +10,6 @@ public class FileMsg extends DownloadableMsg {
 
     String filename;
     String fileext;
-    FileMsg(String msgid, String action, String from, Vector<String> tolist, String roomid, int msgtime, String msgtype,
-            String sdkfileid, String md5sum, long filesize,String filename,String fileext,FileStorer fs) {
-        super(msgid, action, from, tolist, roomid, msgtime, msgtype, sdkfileid, md5sum, filesize,fs);
-        this.filename=filename;
-        this.fileext=fileext;
-    }
 
     FileMsg(String sdkfileid,String md5sum,long filesize,FileStorer fs,String filename,String fileext){
         super(sdkfileid, md5sum, filesize, fs);

@@ -2,7 +2,6 @@ package com.ocrown.converse;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.nio.file.FileStore;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
@@ -10,7 +9,6 @@ import java.util.Map;
 import com.ocrown.DataBase;
 import com.ocrown.FileStorer;
 import com.ocrown.StringOperator;
-import com.ocrown.chatmsg.ChatMsg;
 
 public abstract class WeworkConverse {
     String msgid;

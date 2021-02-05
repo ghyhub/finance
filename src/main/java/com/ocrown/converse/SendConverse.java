@@ -1,5 +1,6 @@
 package com.ocrown.converse;
 
+import java.lang.reflect.InvocationTargetException;
 import java.sql.SQLException;
 import java.util.Map;
 import java.util.Vector;
@@ -49,7 +50,9 @@ public class SendConverse extends WeworkConverse {
         typemsg.saveMsg(db, typemsg + "table");
     }
 
-    public static WeworkConverse conFactory(String data, FileStorer fs) {
+    public static WeworkConverse conFactory(String data, FileStorer fs)
+            throws ClassNotFoundException, NoSuchMethodException, SecurityException, IllegalAccessException,
+            IllegalArgumentException, InvocationTargetException {
         Map<String, String> map = StringOperator.objectFromString(data);
         String msgid = StringOperator.value2String(map.get("msgid"));
         String msgtype = StringOperator.value2String(map.get("msgtype"));

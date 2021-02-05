@@ -9,12 +9,6 @@ public class CardMsg extends ChatMsg {
 
     String corpname;
     String userid;
-    CardMsg(String msgid, String action, String from, Vector<String> tolist, String roomid, int msgtime,
-            String msgtype,String corpname,String userid) {
-        super(msgid, action, from, tolist, roomid, msgtime, msgtype);
-        this.corpname=corpname;
-        this.userid=userid;
-    }
     
     CardMsg(String corpname,String userid){
         super();

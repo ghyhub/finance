@@ -8,10 +8,7 @@ import com.ocrown.StringOperator;
 public class TextMsg extends ChatMsg {
 
     String content;
-    TextMsg(String msgid, String action, String from, Vector<String> tolist, String roomid, String msgtype,int msgtime,String content) {
-        super(msgid, action, from, tolist, roomid, msgtime, msgtype);
-        this.content=content;
-    }
+
     TextMsg(String content){
         super();
         this.content=content;
