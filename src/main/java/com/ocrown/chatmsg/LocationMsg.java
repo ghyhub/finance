@@ -64,7 +64,7 @@ public class LocationMsg extends ChatMsg {
         return ret;
     }
 
-    public static ChatMsg msgFactory(String chatdatal3, Object fs) {
+    public static ChatMsg msgFactory(String msgid,String chatdatal3, Object fs) {
         Vector<String> keys = new Vector<>();
         keys.add("longitude");
         keys.add("latitude");

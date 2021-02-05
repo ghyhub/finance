@@ -43,7 +43,7 @@ public class MeetingVoiceCall extends ChatMsg {
         return super.toMap();
     }
 
-    public static ChatMsg msgFactory(String chatdatal3,Object fs){
+    public static ChatMsg msgFactory(String msgid,String chatdatal3,Object fs){
         return new MeetingVoiceCall();
     }
 }

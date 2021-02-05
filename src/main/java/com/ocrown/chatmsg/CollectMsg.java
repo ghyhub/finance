@@ -71,7 +71,7 @@ public class CollectMsg extends ChatMsg {
         }
     }
 
-    public static ChatMsg msgFactory(String chatdatal3,Object fs){
+    public static ChatMsg msgFactory(String msgid,String chatdatal3,Object fs){
         Vector<String>keys=new Vector<>();
         keys.add("msgid");keys.add("room_name");keys.add("creator");
         keys.add("create_time");keys.add("title");keys.add("detail");
@@ -79,7 +79,7 @@ public class CollectMsg extends ChatMsg {
         Vector<String>detatilstr=StringOperator.listFromString(map.get("detail"));
         Vector<CollectItem>detatilobj=new Vector<>();
         for(String s:detatilstr){
-            detatilobj.add(new CollectItem(StringOperator.value2String(map.get("msgid")),s));
+            detatilobj.add(new CollectItem(msgid,s));
         }
         return new CollectMsg(StringOperator.value2String(map.get("room_name")),StringOperator.value2String(map.get("creator")),
         StringOperator.value2String(map.get("create_time")),StringOperator.value2String(map.get("title")),detatilobj);

@@ -43,14 +43,14 @@ public class ChatrecordMsg extends ChatMsg {
         }
     }
 
-    public static ChatMsg msgFactory(String chatdatal3,Object fs){
+    public static ChatMsg msgFactory(String msgid,String chatdatal3,Object fs){
         Vector<String>keys=new Vector<>();
         keys.add("msgid");keys.add("title");keys.add("item");
         Map<String,String>map=StringOperator.objectFromString(chatdatal3, keys);
         Vector<String>itemsstr=StringOperator.listFromString(map.get("item"));
         Vector<ChatrecordItem>itemsobj=new Vector<>();
         for(String s:itemsstr){
-            itemsobj.add(new ChatrecordItem(StringOperator.value2String(map.get("msgid")),s));
+            itemsobj.add(new ChatrecordItem(msgid,s));
         }
         return new ChatrecordMsg(StringOperator.value2String(map.get("title")),itemsobj);
     }

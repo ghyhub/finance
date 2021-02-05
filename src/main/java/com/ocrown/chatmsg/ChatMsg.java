@@ -90,11 +90,12 @@ public abstract class ChatMsg {
             SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
         //key=[msgid,action,from,tolist,roomid,msgtime,msgtype,?]
         Map<String,String>map=StringOperator.objectFromString(chatdatal3);
+        String msgid=StringOperator.value2String(map.get("msgid"));
         String clasname="com.ocrown.chatmsg."+StringOperator.underline2Bighump(StringOperator.value2String(map.get("msgtype")))+"Msg";
         Class<?> subclas=Class.forName(clasname);
-        Method submethod=subclas.getMethod("msgFactory", chatdatal3.getClass(),fs.getClass());
+        Method submethod=subclas.getMethod("msgFactory", msgid.getClass(), chatdatal3.getClass(),fs.getClass());
         String subdata=map.get(StringOperator.value2String(map.get("msgtype")));
-        ChatMsg result=(ChatMsg)submethod.invoke(null, new Object[]{subdata,fs});
+        ChatMsg result=(ChatMsg)submethod.invoke(null, new Object[]{msgid, subdata,fs});
         result.msgid=StringOperator.value2String(map.get("msgid"));
         result.action=StringOperator.value2String(map.get("action"));
         result.from=StringOperator.value2String(map.get("from"));

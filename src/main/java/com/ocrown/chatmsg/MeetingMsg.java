@@ -87,7 +87,7 @@ public class MeetingMsg extends ChatMsg {
     }
 
 
-    public static ChatMsg msgFactory(String chatdatal3,Object fs){
+    public static ChatMsg msgFactory(String msgid,String chatdatal3,Object fs){
         Vector<String>keys=new Vector<>();
         keys.add("topic");keys.add("starttime");keys.add("endtime");
         keys.add("adress");keys.add("remarks");keys.add("meetingtype");

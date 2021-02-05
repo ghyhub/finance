@@ -49,7 +49,7 @@ public class LinkMsg extends ChatMsg {
         return ret;
     }
 
-    public static ChatMsg msgFactory(String chatdatal3,Object fs){
+    public static ChatMsg msgFactory(String msgid,String chatdatal3,Object fs){
         Vector<String>keys=new Vector<>();
         keys.add("title");keys.add("description");keys.add("link_url");keys.add("image_url");
         Map<String,String>map=StringOperator.objectFromString(chatdatal3, keys);

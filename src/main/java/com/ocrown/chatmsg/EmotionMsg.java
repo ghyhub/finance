@@ -48,7 +48,7 @@ public class EmotionMsg extends DownloadableMsg {
         return ret;
     }
 
-    public static ChatMsg msgFactory(String chatdatal3,FileStorer fs){
+    public static ChatMsg msgFactory(String msgid,String chatdatal3,FileStorer fs){
         Vector<String>keys=new Vector<>();
         keys.add("sdkfileid");keys.add("md5sum");keys.add("filesize");
         keys.add("type");keys.add("width");keys.add("height");

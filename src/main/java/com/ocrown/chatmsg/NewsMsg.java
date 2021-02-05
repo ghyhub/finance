@@ -31,14 +31,14 @@ public class NewsMsg extends ChatMsg {
         }
     }
 
-    public static ChatMsg msgFactory(String chatdatal3,Object fs){
+    public static ChatMsg msgFactory(String msgid,String chatdatal3,Object fs){
         Vector<String>keys=new Vector<>();
         keys.add("msgid");keys.add("item");
         Map<String,String>map=StringOperator.objectFromString(chatdatal3, keys);
         Vector<String>itemsstr=StringOperator.listFromString(map.get("item"));
         Vector<NewsItem>itemsobj=new Vector<>();
         for(String s:itemsstr){
-            itemsobj.add(new NewsItem(StringOperator.value2String(map.get("msgid")),s));
+            itemsobj.add(new NewsItem(msgid,s));
         }
         return new NewsMsg(itemsobj);
     }

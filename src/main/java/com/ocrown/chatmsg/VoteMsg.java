@@ -66,7 +66,7 @@ public class VoteMsg extends ChatMsg {
     }
 
     
-    public static ChatMsg msgFactory(String chatdatal3,Object fs){
+    public static ChatMsg msgFactory(String msgid,String chatdatal3,Object fs){
         Vector<String>keys=new Vector<>();
         keys.add("title");keys.add("item");keys.add("type");keys.add("id");
         Map<String,String>map=StringOperator.objectFromString(chatdatal3, keys);

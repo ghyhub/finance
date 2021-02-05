@@ -33,7 +33,7 @@ public class VoipDocShareMsg extends DownloadableMsg {
         return super.toMap();
     }
     
-    public static ChatMsg msgFactory(String chatdatal3,FileStorer fs){
+    public static ChatMsg msgFactory(String msgid,String chatdatal3,FileStorer fs){
         Vector<String>keys=new Vector<>();
         keys.add("sdkfileid");keys.add("md5sum");keys.add("filesize");
         Map<String,String>map=StringOperator.objectFromString(chatdatal3, keys);
