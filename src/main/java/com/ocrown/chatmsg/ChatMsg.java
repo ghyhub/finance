@@ -105,4 +105,5 @@ public abstract class ChatMsg {
         result.msgtype=StringOperator.value2String(map.get("msgtype"));
         return result;
     }
+    public static ChatMsg msgFactory(String msgid,String msgtype,String chatdatal3,FileStorer fs) {return null;}
 }

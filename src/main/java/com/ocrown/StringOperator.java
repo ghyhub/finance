@@ -349,4 +349,17 @@ public class StringOperator {
          */
         return str;
     }
+
+    public static String list2String(Vector<?>list){
+        String retlist="[";
+        for(Iterator<?> i=list.iterator();i.hasNext();){
+            retlist=retlist+i.next().toString();
+            if(i.hasNext()){
+                retlist=retlist+",";
+            }else{
+                retlist=retlist+"]";
+            }
+        }
+        return retlist;
+    }
 }
