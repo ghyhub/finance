@@ -88,14 +88,13 @@ public abstract class ChatMsg {
 
     public static ChatMsg msgFactory(String chatdatal3,FileStorer fs) throws ClassNotFoundException, NoSuchMethodException,
             SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
-        Vector<String>keys=new Vector<>();
-        keys.add("msgid");keys.add("action");keys.add("from");
-        keys.add("tolist");keys.add("roomid");keys.add("msgtime"); keys.add("msgtype");
-        Map<String,String>map=StringOperator.objectFromString(chatdatal3, keys);
+        //key=[msgid,action,from,tolist,roomid,msgtime,msgtype,?]
+        Map<String,String>map=StringOperator.objectFromString(chatdatal3);
         String clasname="com.ocrown.chatmsg."+StringOperator.underline2Bighump(StringOperator.value2String(map.get("msgtype")))+"Msg";
         Class<?> subclas=Class.forName(clasname);
         Method submethod=subclas.getMethod("msgFactory", chatdatal3.getClass(),fs.getClass());
-        ChatMsg result=(ChatMsg)submethod.invoke(null, new Object[]{chatdatal3,fs});
+        String subdata=map.get(StringOperator.value2String(map.get("msgtype")));
+        ChatMsg result=(ChatMsg)submethod.invoke(null, new Object[]{subdata,fs});
         result.msgid=StringOperator.value2String(map.get("msgid"));
         result.action=StringOperator.value2String(map.get("action"));
         result.from=StringOperator.value2String(map.get("from"));

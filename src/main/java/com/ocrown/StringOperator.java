@@ -30,7 +30,6 @@ public class StringOperator {
         System.out.println("msgtime : " + ret.get("msgtime"));
         System.out.println("msgtype : " + ret.get("msgtype"));
         System.out.println("text: " + ret.get("text"));
-        Map<String,String> retnew=objectFromStringNew(teststring);
         Vector<String> tos = new Vector<>();
         tos = listFromString(ret.get("tolist"));
         String esc = "\\\\//''\"\"%%__\n\n\r\r";
@@ -38,7 +37,7 @@ public class StringOperator {
     }
 
     static public Map<String, String> objectFromString(String object, Vector<String> keys) {
-        return objectFromStringNew(object);
+        return objectFromString(object);
     }
 
     static public Map<String, String> objectFromStringObsolete(String object, Vector<String> keys) {
@@ -204,7 +203,7 @@ public class StringOperator {
         return retlist;
     }
 
-    static public Map<String, String> objectFromStringNew(String object) {
+    static public Map<String, String> objectFromString(String object) {
         Map<String, String> retmap = new HashMap<>();
         int exit = 0;
         int index = 1;
