@@ -19,6 +19,7 @@ public abstract class ChatMsg {
 
     Map<String, String> toMap() {
         Map<String, String> ret = new HashMap<String, String>();
+        ret.put("msgid", msgid);
         return ret;
     }
 

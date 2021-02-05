@@ -47,7 +47,7 @@ public class SendConverse extends WeworkConverse {
     @Override
     public void saveMsg(DataBase db, String table) throws SQLException {
         super.saveMsg(db, table);
-        typemsg.saveMsg(db, typemsg + "table");
+        typemsg.saveMsg(db, msgtype+ "msgtable");
     }
 
     public static WeworkConverse conFactory(String data, FileStorer fs)
@@ -56,7 +56,7 @@ public class SendConverse extends WeworkConverse {
         Map<String, String> map = StringOperator.objectFromString(data);
         String msgid = StringOperator.value2String(map.get("msgid"));
         String msgtype = StringOperator.value2String(map.get("msgtype"));
-        String subdata = map.get(StringOperator.value2String(map.get("type")));
+        String subdata = map.get(StringOperator.value2String(map.get("msgtype")));
         ChatMsg typemsg = ChatMsg.msgFactory(msgid, msgtype, subdata, fs);
         return new SendConverse(StringOperator.value2String(map.get("from")),
                 StringOperator.list2StringList(StringOperator.listFromString(map.get("tolist"))),

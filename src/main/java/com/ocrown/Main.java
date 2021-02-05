@@ -4,12 +4,11 @@ import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
 import java.sql.SQLException;
 import java.util.Properties;
 import java.util.Vector;
 
-import com.ocrown.chatmsg.ChatMsg;
+import com.ocrown.converse.WeworkConverse;
 import com.ocrown.exception.GetChatDataFailException;
 import com.ocrown.exception.GetChatDateErrorException;
 import com.ocrown.exception.SdkInitFailException;
@@ -82,24 +81,16 @@ public class Main {
 
         for (String chatdatal3 : chatdatal3s) {
             System.out.println(chatdatal3);
-            ChatMsg cm=null;
+            WeworkConverse wwc = null;
             try {
-                cm=ChatMsg.msgFactory(chatdatal3, fs);
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
-            } catch (NoSuchMethodException e) {
-                e.printStackTrace();
-            } catch (SecurityException e) {
-                e.printStackTrace();
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
-            } catch (IllegalArgumentException e) {
-                e.printStackTrace();
-            } catch (InvocationTargetException e) {
+                wwc = WeworkConverse.conFactory(chatdatal3, fs);
+            } catch (Throwable e) {
+                // TODO Auto-generated catch block
                 e.printStackTrace();
             }
+
             try {
-                cm.saveMsg(db, jdbcprops.getProperty("table"));
+                wwc.saveMsg(db, jdbcprops.getProperty("table"));
             } catch (SQLException e) {
                 e.printStackTrace();
             }

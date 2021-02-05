@@ -1,6 +1,5 @@
 package com.ocrown.converse;
 
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.sql.SQLException;
 import java.util.HashMap;
@@ -36,15 +35,15 @@ public abstract class WeworkConverse {
     }
 
     public static WeworkConverse conFactory(String data, FileStorer fs)
-            throws ClassNotFoundException, NoSuchMethodException, SecurityException, IllegalAccessException,
-            IllegalArgumentException, InvocationTargetException {
+            throws Throwable {
         Map<String,String>map=StringOperator.objectFromString(data);
         String msgid=StringOperator.value2String(map.get("msgid"));
         String action=StringOperator.value2String(map.get("action"));
-        String classname="com.ocrown.chatmsg."+StringOperator.underline2Bighump(action)+"Converse";
+        String classname="com.ocrown.converse."+StringOperator.underline2Bighump(action)+"Converse";
         Class<?> subclas=Class.forName(classname);
         Method submethod=subclas.getMethod("conFactory", data.getClass(),fs.getClass());
-        WeworkConverse result=(WeworkConverse)submethod.invoke(null, new Object[]{data,fs});
+        WeworkConverse result=null;
+        result=(WeworkConverse)submethod.invoke(null, new Object[]{data,fs});
         result.msgid=msgid;
         result.action=action;
         return result;

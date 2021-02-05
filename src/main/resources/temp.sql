@@ -1,4 +1,4 @@
-use test;
+#use test;
 drop table chatrecord;
 drop TABLE weworkchatdata;
 #TRUNCATE TABLE weworkchatdata;

@@ -1,10 +1,8 @@
 package com.ocrown.chatmsg;
 
 import java.util.Map;
-import java.util.Vector;
 
 import com.ocrown.FileStorer;
-import com.ocrown.StringOperator;
 
 public abstract class DownloadableMsg extends ChatMsg {
 
