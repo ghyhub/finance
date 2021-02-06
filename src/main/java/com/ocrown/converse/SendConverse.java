@@ -57,7 +57,7 @@ public class SendConverse extends WeworkConverse {
         String msgid = StringOperator.value2String(map.get("msgid"));
         String msgtype = StringOperator.value2String(map.get("msgtype"));
         String subdata = map.get(StringOperator.value2String(map.get("msgtype")));
-        ChatMsg typemsg = ChatMsg.msgFactory(msgid, msgtype, subdata, fs);
+        ChatMsg typemsg = ChatMsg.msgFactory(msgid,0, msgtype, subdata, fs);
         return new SendConverse(StringOperator.value2String(map.get("from")),
                 StringOperator.list2StringList(StringOperator.listFromString(map.get("tolist"))),
                 StringOperator.value2String(map.get("roomid")), Long.parseLong(map.get("msgtime")),

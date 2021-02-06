@@ -13,6 +13,7 @@ import com.ocrown.StringOperator;
 public abstract class ChatMsg {
 
     String msgid;
+    int index;
 
     ChatMsg() {
     }
@@ -20,6 +21,7 @@ public abstract class ChatMsg {
     Map<String, String> toMap() {
         Map<String, String> ret = new HashMap<String, String>();
         ret.put("msgid", msgid);
+        ret.put("index", String.valueOf(index));
         return ret;
     }
 
@@ -28,7 +30,7 @@ public abstract class ChatMsg {
         db.sendData(statement);
     }
 
-    public static ChatMsg msgFactory(String msgid,String msgtype,String data,FileStorer fs)
+    public static ChatMsg msgFactory(String msgid,int index ,String msgtype,String data,FileStorer fs)
             throws ClassNotFoundException, NoSuchMethodException, SecurityException, IllegalAccessException,
             IllegalArgumentException, InvocationTargetException {
         String clasname="com.ocrown.chatmsg."+StringOperator.underline2Bighump(msgtype)+"Msg";
@@ -36,6 +38,7 @@ public abstract class ChatMsg {
         Method submethod=subclas.getMethod("msgFactory", msgid.getClass(), data.getClass(),fs.getClass());
         ChatMsg result=(ChatMsg)submethod.invoke(null, new Object[]{msgid, data,fs});
         result.msgid=msgid;
+        result.index=index;
         return result;
     }
 }

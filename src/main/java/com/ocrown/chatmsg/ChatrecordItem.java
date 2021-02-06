@@ -1,24 +1,28 @@
 package com.ocrown.chatmsg;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
 import java.util.Vector;
 
+import com.ocrown.FileStorer;
 import com.ocrown.StringOperator;
 import com.ocrown.TimeOperator;
 
-public class ChatrecordItem extends MsgItem{
+public class ChatrecordItem extends MsgItem {
+    int index;
     String type;
     long msgtime;
-    String content;
+    ChatMsg content;
     Boolean fromchatroom;
-    ChatrecordItem(String msgid,String object){
+    FileStorer fs;
+
+    ChatrecordItem(String msgid, int index,String object, FileStorer fs) throws ClassNotFoundException, NoSuchMethodException,
+            SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
         super(msgid);
-        Vector<String>keys=new Vector<>();
-        keys.add("type");keys.add("msgtime");keys.add("content");keys.add("fromchatroom");
-        Map<String,String>map=StringOperator.objectFromString(object, keys);
+        Map<String,String>map=StringOperator.objectFromString(object);
         this.type=StringOperator.value2String(map.get("type"));
         this.msgtime=Long.parseLong(map.get("msgtime"));
-        this.content=StringOperator.value2String(map.get("content"));
+        this.content=ChatMsg.msgFactory(msgid,0, type,StringOperator.value2String(map.get("content")), fs);
         if(map.get("fromchatroom").equals("true")){
             this.fromchatroom=true;
         }else{
