@@ -8,8 +8,10 @@ import com.ocrown.DataBase;
 
 public class MsgItem {
     String msgid;
-    MsgItem(String msgid){
+    int index;
+    MsgItem(String msgid,int index){
         this.msgid=msgid;
+        this.index=index;
     }
 
     Map<String,String>toMap(){

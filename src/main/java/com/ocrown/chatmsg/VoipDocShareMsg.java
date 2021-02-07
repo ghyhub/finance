@@ -23,13 +23,14 @@ public class VoipDocShareMsg extends DownloadableMsg {
     }
     @Override
     Map<String, String> toMap() {
-        // TODO Auto-generated method stub
-        return super.toMap();
+        Map<String,String>ret= super.toMap();
+        String filepath=downloadFile(msgid+".mp3");
+        ret.put("filepath", filepath);
+        return ret;
     }
     
     public static ChatMsg msgFactory(String msgid,String chatdatal3,FileStorer fs){
         Vector<String>keys=new Vector<>();
-        keys.add("sdkfileid");keys.add("md5sum");keys.add("filesize");
         Map<String,String>map=StringOperator.objectFromString(chatdatal3, keys);
         return new ImageMsg(StringOperator.value2String(map.get("sdkfileid")),
         StringOperator.value2String(map.get("md5sum")),Integer.parseInt(map.get("filesize")),fs);

@@ -64,7 +64,7 @@ public class MeetingMsg extends ChatMsg {
         ret.put("topic", topic);
         ret.put("starttime", TimeOperator.timetamp2time(starttime));
         ret.put("endtime", TimeOperator.timetamp2time(endtime));
-        ret.put("adress", address);
+        ret.put("address", address);
         ret.put("remarks",remarks);
         ret.put("meetingtype", Long.toString(meetingtype));
         ret.put("meetingid", Long.toString(meetingid));

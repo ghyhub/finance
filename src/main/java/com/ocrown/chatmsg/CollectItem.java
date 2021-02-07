@@ -9,8 +9,8 @@ public class CollectItem extends MsgItem{
     long id;
     String que;
     String type;
-    CollectItem(String msgid,String object){
-        super(msgid);
+    CollectItem(String msgid,int index,String object){
+        super(msgid,index);
         Vector<String>keys=new Vector<>();
         keys.add("id");keys.add("que");keys.add("type");
         Map<String,String>map=StringOperator.objectFromString(object, keys);

@@ -1,13 +1,20 @@
 package com.ocrown.chatmsg;
 
+import java.lang.reflect.InvocationTargetException;
+import java.sql.SQLException;
 import java.util.Map;
 import java.util.Vector;
+
+import com.ocrown.DataBase;
+import com.ocrown.FileStorer;
+import com.ocrown.StringOperator;
+
 public class MixedMsg extends ChatMsg {
 
-    Vector<MixedItem>items;
+    Vector<MixedItem> items;
 
-    MixedMsg(){
-        super();
+    MixedMsg(Vector<MixedItem>items) {
+        this.items=items;
     }
 
     public Vector<MixedItem> getItems() {
@@ -19,8 +26,24 @@ public class MixedMsg extends ChatMsg {
         return super.toMap();
     }
 
-    public static ChatMsg msgFactory(String msgid,String chatdatal3,Object fs){
-        return new MixedMsg();
+    @Override
+    public void saveMsg(DataBase db, String table) throws SQLException {
+        super.saveMsg(db, table);
+        for(MixedItem mi:items){
+            mi.saveMsg(db, "mixeditemtable");
+        }
+    }
+
+    public static ChatMsg msgFactory(String msgid, String chatdatal3, FileStorer fs)
+            throws ClassNotFoundException, NoSuchMethodException, SecurityException, IllegalAccessException,
+            IllegalArgumentException, InvocationTargetException {
+        Map<String,String>map=StringOperator.objectFromString(chatdatal3);
+        Vector<String>itemsstr=StringOperator.listFromString(map.get("item"));
+        Vector<MixedItem>itemsobj=new Vector<>();
+        for(int i=0;i<itemsstr.size();i++){
+            itemsobj.add(new MixedItem(msgid, i, itemsstr.get(i),fs));
+        }
+        return new MixedMsg(itemsobj);
     }
     
 }

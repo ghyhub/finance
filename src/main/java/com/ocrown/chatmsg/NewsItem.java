@@ -11,16 +11,16 @@ public class NewsItem extends MsgItem {
     String url;
     String picurl;
 
-    NewsItem(String msgid, String title, String description, String url, String picurl) {
-        super(msgid);
+    NewsItem(String msgid, int index,String title, String description, String url, String picurl) {
+        super(msgid,index);
         this.title = title;
         this.description = description;
         this.url = url;
         this.picurl = picurl;
     }
 
-    NewsItem(String msgid, String object) {
-        super(msgid);
+    NewsItem(String msgid,int index, String object) {
+        super(msgid,index);
         Vector<String> keys = new Vector<>();
         keys.add("title");
         keys.add("description");

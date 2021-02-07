@@ -286,6 +286,16 @@ public class StringOperator {
         return result.toString();
     }
 
+    public static String underline2Lowhump(String para){
+        StringBuilder result = new StringBuilder();
+        String a[] = para.split("_");
+        for(String s:a){
+            result.append(s.substring(0, 1).toLowerCase());
+            result.append(s.substring(1).toLowerCase());
+        }
+        return result.toString();
+    }
+
     public static String underline2Bighump(String para) {
         StringBuilder result = new StringBuilder();
         String a[] = para.split("_");

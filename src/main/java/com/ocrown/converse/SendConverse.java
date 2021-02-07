@@ -47,7 +47,7 @@ public class SendConverse extends WeworkConverse {
     @Override
     public void saveMsg(DataBase db, String table) throws SQLException {
         super.saveMsg(db, table);
-        typemsg.saveMsg(db, msgtype+ "msgtable");
+        typemsg.saveMsg(db, StringOperator.underline2Lowhump(msgtype)+ "msgtable");
     }
 
     public static WeworkConverse conFactory(String data, FileStorer fs)

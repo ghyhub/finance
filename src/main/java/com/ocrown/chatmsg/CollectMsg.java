@@ -57,7 +57,7 @@ public class CollectMsg extends ChatMsg {
     public void saveMsg(DataBase db, String table) throws SQLException {
         super.saveMsg(db, table);
         for(CollectItem cli:details){
-            cli.saveMsg(db, "collectdetail");
+            cli.saveMsg(db, "collectdetailtable");
         }
     }
 
@@ -68,8 +68,8 @@ public class CollectMsg extends ChatMsg {
         Map<String,String>map=StringOperator.objectFromString(chatdatal3, keys);
         Vector<String>detatilstr=StringOperator.listFromString(map.get("detail"));
         Vector<CollectItem>detatilobj=new Vector<>();
-        for(String s:detatilstr){
-            detatilobj.add(new CollectItem(msgid,s));
+        for(int i=0;i<detatilstr.size();i++){
+            detatilobj.add(new CollectItem(msgid, i, detatilstr.get(i)));
         }
         return new CollectMsg(StringOperator.value2String(map.get("room_name")),StringOperator.value2String(map.get("creator")),
         StringOperator.value2String(map.get("create_time")),StringOperator.value2String(map.get("title")),detatilobj);

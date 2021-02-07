@@ -22,7 +22,9 @@ public class VoiceMsg extends DownloadableMsg {
     @Override
     Map<String, String> toMap() {
         Map<String,String>ret=super.toMap();
+        String filepath=downloadFile(msgid+".mp3");
         ret.put("play_length", Long.toString(playlength));
+        ret.put("filepath", filepath);
         return ret;
     }
 

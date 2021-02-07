@@ -23,7 +23,7 @@ public class NewsMsg extends ChatMsg {
     public void saveMsg(DataBase db, String table) throws SQLException {
         super.saveMsg(db, table);
         for(NewsItem ni:items){
-            ni.saveMsg(db, "newsitem");
+            ni.saveMsg(db, "newsitemtable");
         }
     }
 
@@ -33,8 +33,8 @@ public class NewsMsg extends ChatMsg {
         Map<String,String>map=StringOperator.objectFromString(chatdatal3, keys);
         Vector<String>itemsstr=StringOperator.listFromString(map.get("item"));
         Vector<NewsItem>itemsobj=new Vector<>();
-        for(String s:itemsstr){
-            itemsobj.add(new NewsItem(msgid,s));
+        for(int i=0;i<itemsstr.size();i++){
+            itemsobj.add(new NewsItem(msgid, i, itemsstr.get(i)));
         }
         return new NewsMsg(itemsobj);
     }
