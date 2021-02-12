@@ -16,7 +16,7 @@ CREATE TABLE agreemsgtable(
     `userid` VARCHAR(50),
     `agree_time` VARCHAR(20),
     FOREIGN KEY(msgid) REFERENCES weworkconversetable(msgid)
-)
+);
 
 CREATE TABLE calendarmsgtable(
     `msgid` VARCHAR(50),
@@ -29,7 +29,7 @@ CREATE TABLE calendarmsgtable(
     `place` VARCHAR(50),
     `remark` VARCHAR(100),
     FOREIGN KEY(msgid) REFERENCES weworkconversetable(msgid)
-)
+);
 
 CREATE TABLE cardmsgtable(
     `msgid` VARCHAR(50),
@@ -37,14 +37,14 @@ CREATE TABLE cardmsgtable(
     `corpname` VARCHAR(50),
     `userid` VARCHAR(50),
     FOREIGN KEY(msgid) REFERENCES weworkconversetable(msgid)
-) 
+);
  
 CREATE TABLE chatrecordmsgtable(
     `msgid` VARCHAR(50),
     `index` VARCHAR(5),
     `title` VARCHAR(50),
     FOREIGN KEY(msgid) REFERENCES weworkconversetable(msgid)
-)
+);
 
 CREATE TABLE chatrecorditemtable(
     `msgid` VARCHAR(50),
@@ -53,7 +53,7 @@ CREATE TABLE chatrecorditemtable(
     `msgtime` VARCHAR(20),
     `fromchatroom` VARCHAR(10),
     FOREIGN KEY(msgid) REFERENCES chatrecordmsgtable(msgid)
-)
+);
 
 CREATE TABLE collectmsgtable(
     `msgid` VARCHAR(50),
@@ -63,7 +63,7 @@ CREATE TABLE collectmsgtable(
     `createtime` VARCHAR(20),
     `title` VARCHAR(50),
     FOREIGN KEY(msgid) REFERENCES weworkconversetable(msgid)
-)
+);
 
 CREATE TABLE collectitemtable(
     `msgid` VARCHAR(50),
@@ -72,16 +72,16 @@ CREATE TABLE collectitemtable(
     `que` VARCHAR(20),
     `type` VARCHAR(10),
     FOREIGN KEY(msgid) REFERENCES collectmsgtable(msgid)
-)
+);
 
 CREATE TABLE docmsgtable(
     `msgid` VARCHAR(50),
     `index` VARCHAR(5),
     `title` VARCHAR(20),
     `link_url` VARCHAR(100),
-    `creator` VARCHAR(50)
+    `creator` VARCHAR(50),
     FOREIGN KEY(msgid) REFERENCES weworkconversetable(msgid)
-)
+);
 
 CREATE TABLE emotionmsgtable(
     `msgid` VARCHAR(50),
@@ -89,7 +89,7 @@ CREATE TABLE emotionmsgtable(
     `filename` VARCHAR(50),
     `filepath` VARCHAR(100),
     FOREIGN KEY(msgid) REFERENCES weworkconversetable(msgid)
-)
+);
 
 CREATE TABLE externalredpacketmsgtable(
     `msgid` VARCHAR(50),
@@ -99,14 +99,14 @@ CREATE TABLE externalredpacketmsgtable(
     `totalcnt` VARCHAR(10),
     `totalamount` VARCHAR(10),
     FOREIGN KEY(msgid) REFERENCES weworkconversetable(msgid)
-)
+);
 
 CREATE TABLE filemsgtable(
     `msgid` VARCHAR(50),
     `index` VARCHAR(5),
     `filename` VARCHAR(50),
     FOREIGN KEY(msgid) REFERENCES weworkconversetable(msgid)
-)
+);
 
 CREATE TABLE imagemsgtable(
     `msgid` VARCHAR(50),
@@ -172,38 +172,38 @@ CREATE TABLE meetingdemofiledatatable(
     `demooperator` VARCHAR(50),
     `starttime` VARCHAR(20),
     `endtime` VARCHAR(20),
-    FOREIGN KEY(msgid) REFERENCES wmeetingvoicecalltable(msgid)
+    FOREIGN KEY(msgid) REFERENCES meetingvoicecalltable(msgid)
 );
 
-CREATE TABLE meetingsharescreendatatable()(
+CREATE TABLE meetingsharescreendatatable(
     `msgid` VARCHAR(50),
     `index` VARCHAR(5),
     `share` VARCHAR(50),
     `starttime` VARCHAR(20),
     `endtime` VARCHAR(20),
-    FOREIGN KEY(msgid) REFERENCES wmeetingvoicecalltable(msgid)
+    FOREIGN KEY(msgid) REFERENCES meetingvoicecalltable(msgid)
 );
 
-CREATE TABLE mixedmsgtable(){
+CREATE TABLE mixedmsgtable(
     `msgid` VARCHAR(50),
     `index` VARCHAR(5),
     FOREIGN KEY(msgid) REFERENCES weworkconversetable(msgid)
-};
+);
 
-CREATE TABLE mixeditemtable(){
+CREATE TABLE mixeditemtable(
     `msgid` VARCHAR(50),
     `index` VARCHAR(5),
     `type` VARCHAR(10),
     FOREIGN KEY(msgid) REFERENCES mixedmsgtable(msgid)
-};
+);
 
-CREATE TABLE newsmsgitemtable(){
+CREATE TABLE newsmsgitemtable(
     `msgid` VARCHAR(50),
     `index` VARCHAR(5),
     FOREIGN KEY(msgid) REFERENCES weworkconversetable(msgid)
-};
+);
 
-CREATE TABLE newsitemtable(){
+CREATE TABLE newsitemtable(
     `msgid` VARCHAR(50),
     `index` VARCHAR(5),
     `title` VARCHAR(20),
@@ -211,9 +211,9 @@ CREATE TABLE newsitemtable(){
     `url` VARCHAR(100),
     `picurl` VARCHAR(100),
     FOREIGN KEY(msgid) REFERENCES newsmsgitemtable(msgid)
-};
+);
 
-CREATE TABLE redpacketmsgtable(){
+CREATE TABLE redpacketmsgtable(
     `msgid` VARCHAR(50),
     `index` VARCHAR(5),
     `type` VARCHAR(5),
@@ -221,14 +221,14 @@ CREATE TABLE redpacketmsgtable(){
     `totalcnt` VARCHAR(5),
     `totalamount` VARCHAR(5),
     FOREIGN KEY(msgid) REFERENCES weworkconversetable(msgid)
-};
+);
 
-CREATE TABLE revokemsgtable(){
+CREATE TABLE revokemsgtable(
     `msgid` VARCHAR(50),
     `index` VARCHAR(5),
     `pre_msgid` VARCHAR(50),
     FOREIGN KEY(msgid) REFERENCES weworkconversetable(msgid)
-};
+);
 
 CREATE TABLE textmsgtable(
     `msgid` VARCHAR(50),

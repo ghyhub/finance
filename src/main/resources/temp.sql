@@ -1,6 +1,6 @@
 #use test;
-drop table chatrecord;
-drop TABLE weworkchatdata;
+#drop table chatrecord;
+#drop TABLE weworkchatdata;
 #TRUNCATE TABLE weworkchatdata;
 #select *from weworkchatdata;
 #select *from chatrecord;
